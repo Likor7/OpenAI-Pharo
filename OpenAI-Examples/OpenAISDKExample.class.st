@@ -46,3 +46,12 @@ OpenAISDKExample class >> exampleOpenUsagePage [
 	<sampleInstance>
 	^ OpenAISDK openUsagePage 
 ]
+
+{ #category : #examples }
+OpenAISDKExample class >> exampleOpenWithAPIKeyAndBaseUrlForLLama [
+
+	<sampleInstance>
+	^ (OpenAISDK createWithAPIKey: 'APIKey123')
+		baseURL: 'http://localhost:8000/v1';
+		yourself
+]

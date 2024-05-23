@@ -23,6 +23,7 @@ Class {
 	#name : #OpenAISDK,
 	#superclass : #Object,
 	#instVars : [
+		'baseURL',
 		'client'
 	],
 	#category : #'OpenAI-Core'
@@ -59,7 +60,13 @@ OpenAISDK class >> openUsagePage [
 
 { #category : #private }
 OpenAISDK >> baseURL [ 
-^ 'https://api.openai.com/v1'
+	^ baseURL ifNil: [ 'https://api.openai.com/v1' ]
+]
+
+{ #category : #accessing }
+OpenAISDK >> baseURL: anURL [ 
+
+	baseURL := anURL
 ]
 
 { #category : #accessing }
